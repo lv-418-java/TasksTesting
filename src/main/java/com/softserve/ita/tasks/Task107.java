@@ -1,4 +1,4 @@
-package com.softserve.ita.Tasks;
+package com.softserve.ita.tasks;
 
 import com.softserve.ita.taskstesting.Task;
 
