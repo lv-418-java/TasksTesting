@@ -14,14 +14,25 @@ public class Main {
         tasks.put(name, task);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
-            try {
-                String task = bufferedReader.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
+            System.out.println("\nEnter task name:");
+            String taskName = bufferedReader.readLine();
+
+            if (taskName.equals("exit")) {
+                break;
+            }
+
+            Task task = tasks.get(taskName);
+
+            if (task == null) {
+                System.out.println("Task '" + taskName + "' not found.");
+            } else {
+                task.setUp(bufferedReader);
+                Object result = task.execute();
+                System.out.println("Result: " + result);
             }
         }
     }
