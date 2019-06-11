@@ -1,14 +1,15 @@
 package com.softserve.ita.tasks;
 
 import com.softserve.ita.taskstesting.Main;
+import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Task86B {
+public class Task86B implements Task<Integer> {
 
     static {
-        Main.registerTask("86b", new Task86A());
+        Main.registerTask("86b", new Task86B());
     }
 
     private int sumOfNumbers;

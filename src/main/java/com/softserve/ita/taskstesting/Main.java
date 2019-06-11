@@ -1,5 +1,7 @@
 package com.softserve.ita.taskstesting;
 
+import com.softserve.ita.tasks.Task182;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
