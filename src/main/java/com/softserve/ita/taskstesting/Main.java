@@ -32,7 +32,6 @@ public class Main {
             } else {
                 task.setUp(bufferedReader);
                 Object result = task.execute();
-
                 System.out.println("Result: " + result);
             }
         }
