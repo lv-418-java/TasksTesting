@@ -1,5 +1,6 @@
 package com.softserve.ita.tasks;
 
+import com.softserve.ita.taskstesting.Main;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
@@ -9,6 +10,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class Task243a implements Task<List> {
+    static {
+        Main.registerTask("243a", new Task243a());
+    }
+
     private int n;
 
     @Override
@@ -26,6 +31,6 @@ public class Task243a implements Task<List> {
                     return new ArrayList<>(Collections.singleton(new int[]{x, y}));
             }
         }
-        return null;
+        return Collections.emptyList();
     }
 }

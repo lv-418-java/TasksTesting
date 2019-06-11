@@ -1,11 +1,16 @@
 package com.softserve.ita.tasks;
 
+import com.softserve.ita.taskstesting.Main;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
 public class Task107 implements Task<Integer> {
+    static {
+        Main.registerTask("107", new Task107());
+    }
+
     private int m;
 
     @Override

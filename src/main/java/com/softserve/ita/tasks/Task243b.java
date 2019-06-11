@@ -1,5 +1,6 @@
 package com.softserve.ita.tasks;
 
+import com.softserve.ita.taskstesting.Main;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
@@ -8,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Task243b implements Task<List> {
+    static {
+        Main.registerTask("243b", new Task243b());
+    }
+
     private int n;
 
     @Override
