@@ -14,11 +14,6 @@ public class Task86B {
     private int sumOfNumbers;
     private int naturalNumber;
 
-    @Override
-    public String toString() {
-        return "Sum of numbers in number " + naturalNumber + " is: " + sumOfNumbers;
-    }
-
     public void setUp(BufferedReader reader) throws IOException {
         System.out.println("Enter natural number:");
         naturalNumber = Integer.valueOf(reader.readLine());

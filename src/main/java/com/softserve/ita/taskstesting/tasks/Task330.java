@@ -15,11 +15,6 @@ public class Task330 {
     private ArrayList<Integer> arrayList;
     private int naturalNumber;
 
-    @Override
-    public String toString() {
-        return "Sum of numbers in number " + naturalNumber + " is: " + arrayList;
-    }
-
     public void setUp(BufferedReader reader) throws IOException {
         System.out.println("Enter natural number:");
         naturalNumber = Integer.valueOf(reader.readLine());
