@@ -37,7 +37,12 @@ public class Task182 implements Task<Task182.Resault> {
     }
 
     public Resault execute(){
-        return handle(params);
+        try {
+            return handle(params);
+        } catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
 
