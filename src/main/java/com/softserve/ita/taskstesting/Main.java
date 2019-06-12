@@ -1,5 +1,7 @@
 package com.softserve.ita.taskstesting;
 
+import com.softserve.ita.tasks.*;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,11 +10,24 @@ import java.util.Map;
 
 public class Main {
 
-    private static Map<String, Task<?>> tasks = new HashMap<>();
 
-    public static void registerTask(String name, Task task) {
-        tasks.put(name, task);
+    private static Map<String, Task<?>> tasks = new HashMap<>();
+    static{
+        tasks.put("86a", Task86a.getInstance());
+        tasks.put("86b", Task86b.getInstance());
+        tasks.put("88a", Task88a.getInstance());
+        tasks.put("88b", Task88b.getInstance());
+        tasks.put("107", Task107.getInstance());
+        tasks.put("178b", Task178b.getInstance());
+        tasks.put("178v", Task178v.getInstance());
+        tasks.put("243a", Task243a.getInstance());
+        tasks.put("243b", Task243b.getInstance());
+        tasks.put("322", Task322.getInstance());
+        tasks.put("330", Task330.getInstance());
+        tasks.put("554", Task554.getInstance());
+
     }
+
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -24,6 +39,7 @@ public class Main {
             if (taskName.equals("exit")) {
                 break;
             }
+
 
             Task task = tasks.get(taskName);
 

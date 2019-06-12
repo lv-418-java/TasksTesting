@@ -4,12 +4,22 @@ import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.List;
 import java.util.Random;
 
-class Task178v implements Task<Integer> {
+public class Task178v implements Task<Integer> {
+
+    private final static Task178v task178v = new Task178v();
+
+    public synchronized static Task<Integer> getInstance(){
+        return task178v;
+    }
+
+    private Task178v(){
+
+    }
 
     private int arraySize = 0;
-
     private int sqrtOfEvenNumb = 0;
 
     public void setUp(BufferedReader bufferedReader) throws IOException {

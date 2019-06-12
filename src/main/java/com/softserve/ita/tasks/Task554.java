@@ -4,12 +4,23 @@ import com.softserve.ita.taskstesting.Task;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
-class Task554 implements Task<ArrayList> {
+public class Task554 implements Task<ArrayList<List<Integer>>> {
+
+    private final static Task554 task554 = new Task554();
+
+    public synchronized static Task<ArrayList<List<Integer>>> getInstance(){
+        return task554;
+    }
+
+    private Task554(){
+
+    }
 
     private int naturalNumb = 0;
 
-    private ArrayList<ArrayList> resultArr = new ArrayList<>();
+    private ArrayList<List<Integer>> resultArr = new ArrayList<>();
 
     public void setUp(BufferedReader bufferedReader) throws IOException {
         System.out.print("Enter any natural number: ");
@@ -18,8 +29,8 @@ class Task554 implements Task<ArrayList> {
     }
 
 
-    public ArrayList execute() {
-        ArrayList<Integer> result = new ArrayList();
+    public ArrayList<List<Integer>> execute() {
+        List<Integer> result = new ArrayList<>();
         for (int i = 1; i <= naturalNumb; i++) {
             for (int j = 1; j <= naturalNumb; j++) {
                 for (int k = 1; k <= naturalNumb; k++) {

@@ -1,18 +1,24 @@
 package com.softserve.ita.tasks;
 
-import com.softserve.ita.taskstesting.Main;
+import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Task330 {
+public class Task330 implements Task<List> {
+    private final static Task330 task330 = new Task330();
 
-    static {
-        Main.registerTask("330", new Task86A());
+    public synchronized static Task<List> getInstance(){
+        return task330;
     }
 
-    private ArrayList<Integer> arrayList;
+    private Task330(){
+
+    }
+
+
     private int naturalNumber;
 
     public void setUp(BufferedReader reader) throws IOException {
@@ -20,8 +26,8 @@ public class Task330 {
         naturalNumber = Integer.valueOf(reader.readLine());
     }
 
-    public ArrayList<Integer> execute() {
-        arrayList = new ArrayList<Integer>();
+    public List<Integer> execute() {
+        List<Integer> arrayList = new ArrayList<>();
         int sumOfDividers = 0;
         for(int i = 1; i < naturalNumber; i++) {
             for(int j = 1; j < i; j++) {

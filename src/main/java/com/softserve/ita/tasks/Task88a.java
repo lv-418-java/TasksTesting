@@ -7,7 +7,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Task88a implements Task<String> {
-	int number;
+	private final static Task88a task86a = new Task88a();
+
+	public synchronized static Task<String> getInstance(){
+		return task86a;
+	}
+
+	private Task88a(){
+
+	}
+
+	private int number;
+
 	@Override
 	public void setUp(BufferedReader reader) {
 		reader = new BufferedReader(new InputStreamReader(System.in));
@@ -22,9 +33,9 @@ public class Task88a implements Task<String> {
 		int square = number * number;
 		String str = square + "";
 		int zero = 0;
-		char ch[] = str.toCharArray();
-		for (int i = 0; i < ch.length; i++) {
-			if (ch[i] == '3') {
+		char[] ch = str.toCharArray();
+		for (char ch1 : ch) {
+			if (ch1 == '3') {
 				zero++;
 				break;
 			}

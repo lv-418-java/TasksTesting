@@ -1,6 +1,5 @@
 package com.softserve.ita.tasks;
 
-import com.softserve.ita.taskstesting.Main;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
@@ -10,8 +9,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class Task243a implements Task<List> {
-    static {
-        Main.registerTask("243a", new Task243a());
+
+    private final static Task243a task243a = new Task243a();
+
+    public synchronized static Task<List> getInstance(){
+        return task243a;
+    }
+
+    private Task243a(){
+
     }
 
     private int n;
@@ -24,12 +30,17 @@ public class Task243a implements Task<List> {
 
     @Override
     public List execute() {
+        List<Integer> result = new ArrayList<>();
         int boundary = (int) Math.sqrt(n);
 
         for (int x = 1; x <= boundary; x++) {
             for (int y = 1; y <= boundary; y++) {
-                if ((x * x + y * y) == n)
-                    return new ArrayList<>(Collections.singleton(new int[]{x, y}));
+                if ((x * x + y * y) == n){
+                    result.add(x);
+                    result.add(y);
+                    return result;
+                }
+
             }
         }
         return Collections.emptyList();
