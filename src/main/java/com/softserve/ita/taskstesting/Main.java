@@ -20,11 +20,14 @@ public class Main {
         tasks.put("107", Task107.getInstance());
         tasks.put("178b", Task178b.getInstance());
         tasks.put("178v", Task178v.getInstance());
+        tasks.put("178g", Task178g.getInstance());
+        tasks.put("178d", Task178d.getInstance());
         tasks.put("243a", Task243a.getInstance());
         tasks.put("243b", Task243b.getInstance());
         tasks.put("322", Task322.getInstance());
         tasks.put("330", Task330.getInstance());
         tasks.put("554", Task554.getInstance());
+        tasks.put("555", Task555.getInstance());
 
     }
 
