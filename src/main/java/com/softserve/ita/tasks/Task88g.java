@@ -4,17 +4,23 @@ import static java.lang.Math.log10;
 import static java.lang.Math.pow;
 import static java.lang.Math.round;
 
-import com.softserve.ita.taskstesting.Main;
 import com.softserve.ita.taskstesting.Task;
 import java.io.BufferedReader;
 import java.io.IOException;
 
 public class Task88g implements Task<Integer> {
-  private int number;
 
-  static {
-    Main.registerTask("88g", new Task88g());
+  private final static Task88g task88g = new Task88g();
+
+  public synchronized static Task<Integer> getInstance(){
+    return task88g;
   }
+
+  private Task88g(){
+
+  }
+
+  private int number;
 
   @Override
   public void setUp(BufferedReader reader) throws IOException {
