@@ -9,8 +9,10 @@ import java.util.Arrays;
 
 public class Task182 implements Task<Task182.Resault> {
 
-    static {
-        Main.registerTask("182", new Task86B());
+    private final static Task182 task182 = new Task182();
+
+    public synchronized static Task<Resault> getInstance(){
+        return task182;
     }
 
     private int[] params;

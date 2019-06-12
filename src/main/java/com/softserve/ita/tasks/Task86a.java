@@ -1,21 +1,25 @@
 package com.softserve.ita.tasks;
 
-import com.softserve.ita.taskstesting.Main;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Task86A implements Task<Integer> {
+public class Task86a implements Task<Integer> {
+    private final static Task86a task86a = new Task86a();
 
-    static {
-        Main.registerTask("86a", new Task86A());
+    public synchronized static Task<Integer> getInstance(){
+      return task86a;
     }
 
-    static char[] returnCharArrayOfNumber(int natutalNumber) {
-        String temp = Integer.toString(natutalNumber);
-        char [] array = temp.toCharArray();
-        return  array;
+    private Task86a(){
+
+    }
+
+
+    static char[] returnCharArrayOfNumber(int natualNumber) {
+        String temp = Integer.toString(natualNumber);
+        return temp.toCharArray();
     }
 
     private int naturalNumber;

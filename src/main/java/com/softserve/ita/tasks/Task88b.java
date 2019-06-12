@@ -8,7 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Task88b implements Task<Integer> {
-	int number;
+
+	private final static Task88b task86b = new Task88b();
+
+	public synchronized static Task<Integer> getInstance(){
+		return task86b;
+	}
+
+	private Task88b(){
+
+	}
+
+	private int number;
+
 	@Override
 	public void setUp(BufferedReader reader) {
 		try {
@@ -21,16 +33,15 @@ public class Task88b implements Task<Integer> {
 	public Integer execute() {
 
 		String str = number + "";
-		char ch[] = str.toCharArray();
-		List<Character> list = new ArrayList<Character>();
+		char[] ch = str.toCharArray();
+		List<Character> list = new ArrayList<>();
 		for (int i = ch.length - 1; i >= 0; i--) {
 			list.add(ch[i]);
 		}
-		String word = "";
+		StringBuilder word = new StringBuilder();
 		for (char c : list) {
-			word = word + c;
+			word.append(c);
 		}
-		int finalNumber = Integer.parseInt(word);
-		return finalNumber;
+		return Integer.parseInt(word.toString());
 	}
 }

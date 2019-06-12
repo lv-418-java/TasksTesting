@@ -8,8 +8,10 @@ import java.io.IOException;
 
 public class Task323 implements Task<Integer[]> {
 
-    static {
-        Main.registerTask("323", new Task323());
+    private final static Task323 task323 = new Task323();
+
+    public synchronized static Task<Integer[]> getInstance(){
+        return task323;
     }
 
     private int number;

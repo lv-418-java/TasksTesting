@@ -8,12 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-class Task178b implements Task<List> {
+public class Task178b implements Task<List> {
+    private final static Task178b task178b = new Task178b();
+
+    public synchronized static Task<List> getInstance(){
+        return task178b;
+    }
+
+    private Task178b(){
+
+    }
 
     private int arraySize = 0;
-
     private int multOf3 = 0;
-
     private int notMultOf5 = 0;
 
     public void setUp(BufferedReader bufferedReader) throws IOException {

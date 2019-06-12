@@ -7,12 +7,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Task322 implements Task<Integer> {
-	private static List<Integer> sumDilnukOfEveryNumber = new ArrayList<Integer>();
-	private static List<Integer> list = new ArrayList<Integer>();
+
+	private final static Task322 task322 = new Task322();
+
+	public synchronized static Task<Integer> getInstance(){
+		return task322;
+	}
+
+	private Task322(){
+
+	}
+
+	private static List<Integer> sumDilnukOfEveryNumber = new ArrayList<>();
+	private static List<Integer> list = new ArrayList<>();
 	private static int maxNum = 0;
 	private static int zero = 0;
 
-	public int max(int max) {
+	private int max(int max) {
 		for (int i = 0; i < sumDilnukOfEveryNumber.size() - 1; i++) {
 			if (sumDilnukOfEveryNumber.get(i + 1) > max) {
 				max = sumDilnukOfEveryNumber.get(i + 1);
@@ -29,8 +40,8 @@ public class Task322 implements Task<Integer> {
 					list.add(i);
 				}
 			}
-			for (int k = 0; k < list.size(); k++) {
-				zero += list.get(k);
+			for (Integer integer : list) {
+				zero += integer;
 			}
 			sumDilnukOfEveryNumber.add(zero);
 			zero = 0;

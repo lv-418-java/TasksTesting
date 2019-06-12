@@ -10,8 +10,10 @@ import java.util.Map;
 
 public class Task560 implements Task<Map<Integer, Integer>> {
 
-    static {
-        Main.registerTask("560", new Task560());
+    private final static Task560 task560 = new Task560();
+
+    public synchronized static Task<Map<Integer, Integer>> getInstance(){
+        return task560;
     }
 
     public void setUp(BufferedReader reader) throws IOException {}
