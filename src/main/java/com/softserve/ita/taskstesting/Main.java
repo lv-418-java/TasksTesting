@@ -1,5 +1,6 @@
 package com.softserve.ita.taskstesting;
 
+
 import com.softserve.ita.tasks.*;
 
 import java.io.BufferedReader;
@@ -14,7 +15,6 @@ public class Main {
     private static Map<String, Task<?>> tasks = new HashMap<>();
     static{
         tasks.put("86a", Task86a.getInstance());
-        tasks.put("86b", Task86b.getInstance());
         tasks.put("88a", Task88a.getInstance());
         tasks.put("88b", Task88b.getInstance());
         tasks.put("107", Task107.getInstance());
