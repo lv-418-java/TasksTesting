@@ -18,11 +18,12 @@ public class Task243a implements Task<List> {
 
     @Override
     public void setUp(BufferedReader reader) throws IOException {
+        System.out.println("Enter value for n: ");
         n = Integer.parseInt(reader.readLine());
     }
 
     @Override
-    public List execute(){
+    public List execute() {
         int boundary = (int) Math.sqrt(n);
 
         for (int x = 1; x <= boundary; x++) {

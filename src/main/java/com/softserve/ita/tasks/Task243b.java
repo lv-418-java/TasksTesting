@@ -17,6 +17,7 @@ public class Task243b implements Task<List> {
 
     @Override
     public void setUp(BufferedReader reader) throws IOException {
+        System.out.println("Enter value for n: ");
         n = Integer.parseInt(reader.readLine());
     }
 
