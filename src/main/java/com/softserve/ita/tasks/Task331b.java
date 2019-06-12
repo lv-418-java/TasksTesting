@@ -4,13 +4,16 @@ import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import static java.lang.Math.pow;
 
-public class Task331b implements Task<Integer> {
+public class Task331b implements Task<List<String>> {
     private final static Task331b task331b = new Task331b();
 
-    public synchronized static Task<Integer> getInstance() {
+    public synchronized static Task<List<String>> getInstance() {
         return task331b;
     }
 
@@ -19,6 +22,7 @@ public class Task331b implements Task<Integer> {
     }
 
     private int n;
+    List<String> list = new ArrayList<>();
 
     @Override
     public void setUp(BufferedReader reader) throws IOException {
@@ -27,24 +31,23 @@ public class Task331b implements Task<Integer> {
     }
 
     @Override
-    public Integer execute() {
+    public List<String> execute() {
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < n; j++) {
                 for (int k = 1; k < n; k++) {
                     if (n == pow(i, 2) + pow(j, 2) + pow(k, 2)) {
-                        System.out.println("[" + i + " " + j + " " + k + "] ");
-                        System.out.println("[" + i + " " + k + " " + j + "] ");
-                        System.out.println("[" + j + " " + i + " " + k + "] ");
-                        System.out.println("[" + j + " " + k + " " + i + "] ");
-                        System.out.println("[" + k + " " + i + " " + j + "] ");
-                        System.out.println("[" + k + " " + j + " " + i + "] ");
-                        return 0;
+                        list.add("[" + i + " " + j + " " + k + "] ");
+                        list.add("[" + i + " " + k + " " + j + "] ");
+                        list.add("[" + j + " " + i + " " + k + "] ");
+                        list.add("[" + j + " " + k + " " + i + "] ");
+                        list.add("[" + k + " " + i + " " + j + "] ");
+                        list.add("[" + k + " " + j + " " + i + "] ");
+                        return list;
                     }
                 }
             }
         }
-        System.out.println("No number");
-        return 0;
+        return Collections.emptyList();
     }
 
 }

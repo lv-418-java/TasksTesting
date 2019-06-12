@@ -5,10 +5,10 @@ import com.softserve.ita.taskstesting.Task;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Task108 implements Task<Integer> {
+public class Task108 implements Task<Double> {
     private final static Task108 task108 = new Task108();
 
-    public synchronized static Task<Integer> getInstance() {
+    public synchronized static Task<Double> getInstance() {
         return task108;
     }
 
@@ -25,12 +25,11 @@ public class Task108 implements Task<Integer> {
     }
 
     @Override
-    public Integer execute() {
+    public Double execute() {
         for (int i = 0; ; i++) {
             double x = Math.pow(2, i);
             if (x > n) {
-                System.out.println("x = " + x);
-                return 0;
+                return x;
             }
         }
     }
