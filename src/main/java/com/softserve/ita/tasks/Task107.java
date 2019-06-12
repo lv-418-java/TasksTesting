@@ -15,6 +15,7 @@ public class Task107 implements Task<Integer> {
 
     @Override
     public void setUp(BufferedReader reader) throws IOException {
+        System.out.println("Enter value for m: ");
         m = Integer.parseInt(reader.readLine());
     }
 
