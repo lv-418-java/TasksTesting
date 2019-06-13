@@ -10,12 +10,16 @@ import java.util.List;
 public class Task332 implements Task<List> {
   private int number;
 
-  static {
-    Main.registerTask("332", new Task332());
+  private final static Task332 task332 = new Task332();
+
+  public synchronized static Task<List> getInstance() {
+    return task332;
   }
   @Override
   public void setUp(BufferedReader reader) throws IOException {
+    System.out.println("Enter value number: ");
     number = Integer.parseInt(reader.readLine());
+    System.out.println("Solution ...");
   }
 
   @Override

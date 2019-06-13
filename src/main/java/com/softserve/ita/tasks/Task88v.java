@@ -23,7 +23,9 @@ public class Task88v implements Task<Integer> {
 
   @Override
   public void setUp(BufferedReader reader) throws IOException {
+    System.out.println("Enter number: ");
     number = Integer.parseInt(reader.readLine());
+    System.out.println("Rearrange number ...");
   }
 
   @Override
