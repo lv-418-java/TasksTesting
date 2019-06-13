@@ -11,11 +11,11 @@ import java.util.Random;
 public class Task178b implements Task<List> {
     private final static Task178b task178b = new Task178b();
 
-    public synchronized static Task<List> getInstance(){
+    public synchronized static Task<List> getInstance() {
         return task178b;
     }
 
-    private Task178b(){
+    private Task178b() {
 
     }
 

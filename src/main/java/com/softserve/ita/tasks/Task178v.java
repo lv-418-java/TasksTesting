@@ -11,11 +11,11 @@ public class Task178v implements Task<Integer> {
 
     private final static Task178v task178v = new Task178v();
 
-    public synchronized static Task<Integer> getInstance(){
+    public synchronized static Task<Integer> getInstance() {
         return task178v;
     }
 
-    private Task178v(){
+    private Task178v() {
 
     }
 

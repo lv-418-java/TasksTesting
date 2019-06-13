@@ -6,8 +6,7 @@ import com.softserve.ita.tasks.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 
@@ -42,7 +41,6 @@ public class Main {
             if (taskName.equals("exit")) {
                 break;
             }
-
 
             Task task = tasks.get(taskName);
 

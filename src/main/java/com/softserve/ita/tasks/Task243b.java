@@ -11,11 +11,11 @@ import java.util.List;
 public class Task243b implements Task<List<String>> {
     private final static Task243b task243b = new Task243b();
 
-    public synchronized static Task<List<String>> getInstance(){
+    public synchronized static Task<List<String>> getInstance() {
         return task243b;
     }
 
-    private Task243b(){
+    private Task243b() {
 
     }
 

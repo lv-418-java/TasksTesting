@@ -12,11 +12,11 @@ public class Task243a implements Task<List> {
 
     private final static Task243a task243a = new Task243a();
 
-    public synchronized static Task<List> getInstance(){
+    public synchronized static Task<List> getInstance() {
         return task243a;
     }
 
-    private Task243a(){
+    private Task243a() {
 
     }
 
@@ -35,7 +35,7 @@ public class Task243a implements Task<List> {
 
         for (int x = 1; x <= boundary; x++) {
             for (int y = 1; y <= boundary; y++) {
-                if ((x * x + y * y) == n){
+                if ((x * x + y * y) == n) {
                     result.add(x);
                     result.add(y);
                     return result;
