@@ -16,6 +16,8 @@ public class Main {
         tasks.put("86a", Task86a.getInstance());
         tasks.put("88a", Task88a.getInstance());
         tasks.put("88b", Task88b.getInstance());
+        tasks.put("88v", Task88v.getInstance());
+        tasks.put("88g", Task88g.getInstance());
         tasks.put("107", Task107.getInstance());
         tasks.put("178b", Task178b.getInstance());
         tasks.put("178v", Task178v.getInstance());
@@ -25,6 +27,7 @@ public class Main {
         tasks.put("243b", Task243b.getInstance());
         tasks.put("322", Task322.getInstance());
         tasks.put("330", Task330.getInstance());
+        tasks.put("332", Task332.getInstance());
         tasks.put("554", Task554.getInstance());
         tasks.put("555", Task555.getInstance());
 
