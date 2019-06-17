@@ -5,11 +5,11 @@ import com.softserve.ita.taskstesting.Task;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Task555 implements Task<Integer> {
+public class Task555 implements Task<Integer, Integer> {
 
     private final static Task555 task555 = new Task555();
 
-    public synchronized static Task<Integer> getInstance(){
+    public synchronized static Task<Integer, Integer> getInstance(){
         return task555;
     }
 
@@ -19,14 +19,20 @@ public class Task555 implements Task<Integer> {
 
     private int level;
 
+    @Override
     public void setUp(BufferedReader reader) throws IOException {
         System.out.print("Level: ");
         level = Integer.valueOf(reader.readLine());
     }
 
+    @Override
+    public void setUp(Integer value) throws IOException {
+        level = value;
+    }
+
     public Integer execute() {
-        int old[] = new int[level];
-        int cur[] = new int[level];
+        int[] old = new int[level];
+        int[] cur = new int[level];
         old[0] = 1;
         for(int i = 0; i < level; i++){
             for(int k = 0; k <= i; k++){

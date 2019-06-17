@@ -1,16 +1,15 @@
 package com.softserve.ita.tasks;
 
-import com.softserve.ita.taskstesting.Main;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Task323 implements Task<Integer[]> {
+public class Task323 implements Task<Integer[], Integer> {
 
     private final static Task323 task323 = new Task323();
 
-    public synchronized static Task<Integer[]> getInstance(){
+    public synchronized static Task<Integer[], Integer> getInstance(){
         return task323;
     }
 
@@ -21,11 +20,16 @@ public class Task323 implements Task<Integer[]> {
         this.number = Integer.valueOf(reader.readLine());
     }
 
+    @Override
+    public void setUp(Integer value) throws IOException {
+        number = value;
+    }
+
     public Integer[] execute(){
         return run(this.number);
     }
 
-    public Integer[] run(int number) {
+    private Integer[] run(int number) {
 
         if (number < 0) {
             throw new IllegalArgumentException("Number " + number + " is negetive");

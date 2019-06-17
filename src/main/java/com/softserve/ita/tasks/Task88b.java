@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task88b implements Task<Integer> {
+public class Task88b implements Task<Integer, Integer> {
 
 	private final static Task88b task86b = new Task88b();
 
-	public synchronized static Task<Integer> getInstance(){
+	public synchronized static Task<Integer, Integer> getInstance(){
 		return task86b;
 	}
 
@@ -29,6 +29,12 @@ public class Task88b implements Task<Integer> {
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public void setUp(Integer value) throws IOException {
+		number = value;
+	}
+
 	@Override
 	public Integer execute() {
 

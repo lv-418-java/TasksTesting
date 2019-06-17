@@ -6,10 +6,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Task88a implements Task<String> {
+public class Task88a implements Task<String, Integer> {
 	private final static Task88a task86a = new Task88a();
 
-	public synchronized static Task<String> getInstance(){
+	public synchronized static Task<String, Integer> getInstance(){
 		return task86a;
 	}
 
@@ -28,6 +28,12 @@ public class Task88a implements Task<String> {
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public void setUp(Integer value) throws IOException {
+		number = value;
+	}
+
 	@Override
 	public String execute() {
 		int square = number * number;

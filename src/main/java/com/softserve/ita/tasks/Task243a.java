@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Task243a implements Task<List> {
+public class Task243a implements Task<List, Integer> {
 
     private final static Task243a task243a = new Task243a();
 
-    public synchronized static Task<List> getInstance(){
+    public synchronized static Task<List, Integer> getInstance(){
         return task243a;
     }
 
@@ -26,6 +26,11 @@ public class Task243a implements Task<List> {
     public void setUp(BufferedReader reader) throws IOException {
         System.out.println("Enter value for n: ");
         n = Integer.parseInt(reader.readLine());
+    }
+
+    @Override
+    public void setUp(Integer value) throws IOException {
+        n = value;
     }
 
     @Override

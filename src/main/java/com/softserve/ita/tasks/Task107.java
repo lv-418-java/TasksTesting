@@ -5,11 +5,11 @@ import com.softserve.ita.taskstesting.Task;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Task107 implements Task<Integer> {
+public class Task107 implements Task<Integer, Integer> {
 
     private final static Task107 task107 = new Task107();
 
-    public synchronized static Task<Integer> getInstance(){
+    public synchronized static Task<Integer, Integer> getInstance(){
         return task107;
     }
 
@@ -23,6 +23,11 @@ public class Task107 implements Task<Integer> {
     public void setUp(BufferedReader reader) throws IOException {
         System.out.println("Enter value for m: ");
         m = Integer.parseInt(reader.readLine());
+    }
+
+    @Override
+    public void setUp(Integer value) throws IOException {
+        m = value;
     }
 
     @Override

@@ -10,10 +10,10 @@ import java.util.List;
 
 import static java.lang.Math.pow;
 
-public class Task331b implements Task<List<String>> {
+public class Task331b implements Task<List<String>, Integer> {
     private final static Task331b task331b = new Task331b();
 
-    public synchronized static Task<List<String>> getInstance() {
+    public synchronized static Task<List<String>, Integer> getInstance() {
         return task331b;
     }
 
@@ -28,6 +28,11 @@ public class Task331b implements Task<List<String>> {
     public void setUp(BufferedReader reader) throws IOException {
         System.out.println("Print some number: ");
         n = Integer.parseInt(reader.readLine());
+    }
+
+    @Override
+    public void setUp(Integer value) throws IOException {
+        n = value;
     }
 
     @Override

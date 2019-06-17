@@ -8,11 +8,11 @@ import com.softserve.ita.taskstesting.Task;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Task88g implements Task<Integer> {
+public class Task88g implements Task<Integer, Integer> {
 
   private final static Task88g task88g = new Task88g();
 
-  public synchronized static Task<Integer> getInstance(){
+  public synchronized static Task<Integer, Integer> getInstance(){
     return task88g;
   }
 
@@ -27,6 +27,11 @@ public class Task88g implements Task<Integer> {
     System.out.println("Enter number: ");
     number = Integer.parseInt(reader.readLine());
     System.out.println("Append one ...");
+  }
+
+  @Override
+  public void setUp(Integer value) throws IOException {
+    number = value;
   }
 
   @Override

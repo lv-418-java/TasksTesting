@@ -3,14 +3,15 @@ package com.softserve.ita.tasks;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task322 implements Task<Integer> {
+public class Task322 implements Task<Integer, Integer> {
 
 	private final static Task322 task322 = new Task322();
 
-	public synchronized static Task<Integer> getInstance(){
+	public synchronized static Task<Integer, Integer> getInstance(){
 		return task322;
 	}
 
@@ -32,6 +33,7 @@ public class Task322 implements Task<Integer> {
 		}
 		return maxNum;
 	}
+
 	@Override
 	public Integer execute() {
 		for (int j = 1; j <= 10000; j++) {
@@ -54,5 +56,10 @@ public class Task322 implements Task<Integer> {
 	@Override
 	public void setUp(BufferedReader reader) {
 		
+	}
+
+	@Override
+	public void setUp(Integer value) throws IOException {
+
 	}
 }
