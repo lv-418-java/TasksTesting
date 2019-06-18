@@ -7,10 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task330 implements Task<List> {
+public class Task330 implements Task<List, Integer> {
     private final static Task330 task330 = new Task330();
 
-    public synchronized static Task<List> getInstance() {
+    public synchronized static Task<List, Integer> getInstance() {
         return task330;
     }
 
@@ -21,9 +21,15 @@ public class Task330 implements Task<List> {
 
     private int naturalNumber;
 
+    @Override
     public void setUp(BufferedReader reader) throws IOException {
         System.out.println("Enter natural number:");
         naturalNumber = Integer.valueOf(reader.readLine());
+    }
+
+    @Override
+    public void setUp(Integer number) throws IOException {
+        naturalNumber = number;
     }
 
     public List<Integer> execute() {

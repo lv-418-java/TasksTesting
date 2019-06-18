@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Task178b implements Task<List> {
+public class Task178b implements Task<List, Integer> {
     private final static Task178b task178b = new Task178b();
 
-    public synchronized static Task<List> getInstance() {
+    public synchronized static Task<List, Integer> getInstance(){
         return task178b;
     }
 
-    private Task178b() {
+    private Task178b(){
 
     }
 
@@ -29,8 +29,13 @@ public class Task178b implements Task<List> {
         arraySize = Integer.valueOf(bufferedReader.readLine());
     }
 
+    @Override
+    public void setUp(Integer value) throws IOException {
+        arraySize = value;
+    }
+
     public List execute() {
-        int naturalArr[] = new int[arraySize];
+        int[] naturalArr = new int[arraySize];
 
         Random random = new Random();
 
@@ -38,12 +43,12 @@ public class Task178b implements Task<List> {
             naturalArr[i] = random.nextInt(100) + 1;
         }
 
-        for (int i = 0; i < naturalArr.length; i++) {
-            if ((naturalArr[i] % 3) == 0) multOf3++;
-            if ((naturalArr[i] % 5) != 0) notMultOf5++;
+        for (int i1 : naturalArr) {
+            if ((i1 % 3) == 0) multOf3++;
+            if ((i1 % 5) != 0) notMultOf5++;
         }
 
-        List<Integer> arrResult = new ArrayList();
+        List<Integer> arrResult = new ArrayList<>();
 
         arrResult.add(multOf3);
         arrResult.add(notMultOf5);

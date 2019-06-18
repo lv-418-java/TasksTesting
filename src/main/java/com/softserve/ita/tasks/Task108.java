@@ -5,10 +5,10 @@ import com.softserve.ita.taskstesting.Task;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Task108 implements Task<Double> {
+public class Task108 implements Task<Double, Integer> {
     private final static Task108 task108 = new Task108();
 
-    public synchronized static Task<Double> getInstance() {
+    public synchronized static Task<Double, Integer> getInstance() {
         return task108;
     }
 
@@ -22,6 +22,11 @@ public class Task108 implements Task<Double> {
     public void setUp(BufferedReader reader) throws IOException {
         System.out.println("Print some number: ");
         n = Integer.parseInt(reader.readLine());
+    }
+
+    @Override
+    public void setUp(Integer value) throws IOException {
+        n = value;
     }
 
     @Override

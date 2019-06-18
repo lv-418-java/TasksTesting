@@ -6,11 +6,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Random;
 
-public class Task178g implements Task<Integer> {
+public class Task178g implements Task<Integer, int[]> {
 
     private final static Task178g task178g = new Task178g();
 
-    public synchronized static Task<Integer> getInstance(){
+    public synchronized static Task<Integer, int[]> getInstance(){
         return task178g;
     }
 
@@ -19,7 +19,7 @@ public class Task178g implements Task<Integer> {
     }
 
     private int arraySize = 0;
-    private int array[];
+    private int[] array;
     private int count = 0;
 
     public void setUp(BufferedReader bufferedReader) throws IOException {
@@ -30,6 +30,12 @@ public class Task178g implements Task<Integer> {
         for(int i = 0; i < arraySize; i++) {
             array[i] = Integer.valueOf(bufferedReader.readLine());
         }
+    }
+
+    @Override
+    public void setUp(int[] value) throws IOException {
+        array = new int[value.length];
+        System.arraycopy(value,0,array,0,value.length);
     }
 
     public Integer execute() {

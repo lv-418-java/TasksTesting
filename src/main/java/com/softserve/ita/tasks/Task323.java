@@ -1,16 +1,18 @@
 package com.softserve.ita.tasks;
 
-import com.softserve.ita.taskstesting.Main;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class Task323 implements Task<Integer[]> {
+public class Task323 implements Task<List<Integer>, Integer> {
 
     private final static Task323 task323 = new Task323();
 
-    public synchronized static Task<Integer[]> getInstance(){
+    public synchronized static Task<List<Integer>, Integer> getInstance(){
         return task323;
     }
 
@@ -21,11 +23,16 @@ public class Task323 implements Task<Integer[]> {
         this.number = Integer.valueOf(reader.readLine());
     }
 
-    public Integer[] execute(){
+    @Override
+    public void setUp(Integer value) throws IOException {
+        number = value;
+    }
+
+    public List<Integer> execute(){
         return run(this.number);
     }
 
-    public Integer[] run(int number) {
+    private List<Integer> run(int number) {
 
         if (number < 0) {
             throw new IllegalArgumentException("Number " + number + " is negetive");
@@ -36,18 +43,19 @@ public class Task323 implements Task<Integer[]> {
         return calculate();
     }
 
-    private Integer[] calculate() {
+    private List<Integer> calculate() {
 
         int remainder = number;
         int remainderBuffer = 0;
-        Integer[] squareRoots = new Integer[4];
+        List<Integer> squareRoots = new ArrayList<>(Arrays.asList(0,0,0,0));
+
         int currentSquarePosition = 0;
 
         while (remainder > 0) {
             double sqrt = Math.sqrt(remainder);
             if (sqrt % 2 == 0 || sqrt % 2 == 1) {
                 remainder -= sqrt * sqrt;
-                squareRoots[currentSquarePosition] = (int) sqrt;
+                squareRoots.set(currentSquarePosition, (int) sqrt);
                 remainder += remainderBuffer;
                 remainderBuffer = 0;
                 currentSquarePosition++;

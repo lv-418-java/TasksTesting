@@ -5,14 +5,15 @@ import com.softserve.ita.taskstesting.Task;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Task86b implements Task<Integer> {
+
+public class Task86b implements Task<Integer, Integer> {
     private final static Task86b task86b = new Task86b();
 
-    public synchronized static Task<Integer> getInstance() {
-        return task86b;
+    public synchronized static Task<Integer, Integer> getInstance(){
+      return task86b;
     }
 
-    private Task86b() {
+    private Task86b(){
 
     }
 
@@ -26,6 +27,11 @@ public class Task86b implements Task<Integer> {
     }
 
     @Override
+    public void setUp(Integer value) throws IOException {
+        naturalNumber = value;
+    }
+
+    @Override
     public Integer execute() {
         char[] array = Task86a.returnCharArrayOfNumber(naturalNumber);
         for (char c : array) {
@@ -33,6 +39,4 @@ public class Task86b implements Task<Integer> {
         }
         return sumOfNumbers;
     }
-
-
 }

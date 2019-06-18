@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task554 implements Task<ArrayList<List<Integer>>> {
+public class Task554 implements Task<List<Task554.Triple>, Integer> {
 
     private final static Task554 task554 = new Task554();
 
-    public synchronized static Task<ArrayList<List<Integer>>> getInstance(){
+    public synchronized static Task<List<Triple>, Integer> getInstance(){
         return task554;
     }
 
@@ -23,13 +23,18 @@ public class Task554 implements Task<ArrayList<List<Integer>>> {
 
     private ArrayList<Triple> resultArr = new ArrayList<>();
 
+    @Override
     public void setUp(BufferedReader bufferedReader) throws IOException {
         System.out.print("Enter any natural number: ");
         naturalNumb = Integer.valueOf(bufferedReader.readLine());
     }
 
+    @Override
+    public void setUp(Integer value) throws IOException {
+        naturalNumb = value;
+    }
 
-    public ArrayList execute() {
+    public List<Triple> execute() {
         for (int i = 1; i <= naturalNumb; i++) {
             for (int j = 1; j <= naturalNumb; j++) {
                 for (int k = 1; k <= naturalNumb; k++) {
@@ -42,7 +47,7 @@ public class Task554 implements Task<ArrayList<List<Integer>>> {
         return resultArr;
     }
 
-    class Triple {
+    static class Triple {
         private int a;
         private int b;
         private int c;

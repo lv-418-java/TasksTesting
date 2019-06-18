@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Task243b implements Task<List<String>> {
+public class Task243b implements Task<List<String> , Integer> {
     private final static Task243b task243b = new Task243b();
 
-    public synchronized static Task<List<String>> getInstance() {
+    public synchronized static Task<List<String>, Integer> getInstance(){
         return task243b;
     }
 
-    private Task243b() {
+    private Task243b(){
 
     }
 
@@ -26,6 +26,11 @@ public class Task243b implements Task<List<String>> {
     public void setUp(BufferedReader reader) throws IOException {
         System.out.println("Enter value for n: ");
         n = Integer.parseInt(reader.readLine());
+    }
+
+    @Override
+    public void setUp(Integer value) throws IOException {
+        n = value;
     }
 
     @Override

@@ -7,15 +7,15 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
-public class Task178v implements Task<Integer> {
+public class Task178v implements Task<Integer, Integer> {
 
     private final static Task178v task178v = new Task178v();
 
-    public synchronized static Task<Integer> getInstance() {
+    public synchronized static Task<Integer, Integer> getInstance(){
         return task178v;
     }
 
-    private Task178v() {
+    private Task178v(){
 
     }
 
@@ -28,8 +28,13 @@ public class Task178v implements Task<Integer> {
         arraySize = Integer.valueOf(bufferedReader.readLine());
     }
 
+    @Override
+    public void setUp(Integer value) throws IOException {
+        arraySize = value;
+    }
+
     public Integer execute() {
-        int naturalArr[] = new int[arraySize];
+        int[] naturalArr = new int[arraySize];
 
         Random random = new Random();
 

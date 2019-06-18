@@ -1,6 +1,5 @@
 package com.softserve.ita.tasks;
 
-import com.softserve.ita.taskstesting.Main;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
@@ -8,17 +7,25 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Task560 implements Task<Map<Integer, Integer>> {
+public class Task560 implements Task<Map<Integer, Integer>, Object> {
 
     private final static Task560 task560 = new Task560();
 
-    public synchronized static Task<Map<Integer, Integer>> getInstance(){
+    public synchronized static Task<Map<Integer, Integer>, Object> getInstance() {
         return task560;
+
     }
 
-    public void setUp(BufferedReader reader) throws IOException {}
+    @Override
+    public void setUp(BufferedReader reader) throws IOException {
+    }
 
-    public Map<Integer, Integer> execute(){
+    @Override
+    public void setUp(Object value) throws IOException {
+
+    }
+
+    public Map<Integer, Integer> execute() {
         return run();
     }
 
