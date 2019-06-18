@@ -1,5 +1,6 @@
 package com.softserve.ita.tasks;
 
+import com.softserve.ita.tasks.Task332.Solution;
 import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
@@ -7,12 +8,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task332 implements Task<List, Integer> {
+public class Task332 implements Task<List <Solution>, Integer> {
     private int number;
 
     private final static Task332 task332 = new Task332();
 
-    public synchronized static Task<List, Integer> getInstance() {
+    public synchronized static Task<List<Solution>, Integer> getInstance() {
         return task332;
     }
 
@@ -29,7 +30,7 @@ public class Task332 implements Task<List, Integer> {
     }
 
     @Override
-    public List execute() {
+    public List<Solution> execute() {
         return findSolution(number);
     }
 
