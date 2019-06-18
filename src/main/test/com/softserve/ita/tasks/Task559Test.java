@@ -11,27 +11,30 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.testng.Assert.*;
 
-public class Task323Test {
-private Task<List<Integer>, Integer> task;
+public class Task559Test {
+
+    private Task<List<Long>, Long>  task;
 
     @BeforeTest
     public void init() {
-        task = Task323.getInstance();
+        task = Task559.getInstance();
 
     }
 
     @DataProvider(name = "data")
     public Object[][] getDataForTest() {
-      return new Object[][]{
-              {250, new Integer[]{15,5,0,0}},
-              {500, new Integer[]{22,4,0,0}},
-              {680, new Integer[]{26,2,0,0}}
-      };
+        return new Object[][]{
+                {952323L,  new Long[]{3L, 7L, 31L, 127L, 2047L, 8191L, 131071L, 524287L}},
+                {893L,     new Long[]{3L, 7L, 31L, 127L}},
+                {9000L,    new Long[]{3L, 7L, 31L, 127L, 2047L, 8191L}},
+                {1234567L, new Long[]{3L, 7L, 31L, 127L, 2047L, 8191L, 131071L, 524287L}},
+        };
     }
 
     @Test(dataProvider = "data")
-    public void testExecute(Integer n, Integer[] arr) throws IOException {
+    public void testExecute(Long n, Long[] arr) throws IOException {
         task.setUp(n);
         Assert.assertEquals(new ArrayList<>(Arrays.asList(arr)), task.execute());
 

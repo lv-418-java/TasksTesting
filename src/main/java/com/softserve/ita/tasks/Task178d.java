@@ -7,10 +7,10 @@ import java.io.IOException;
 
 public class Task178d implements Task<Integer, int[]> {
 
-    private final static Task178d task178g = new Task178d();
+    private final static Task178d task178d = new Task178d();
 
     public synchronized static Task<Integer, int[]> getInstance(){
-        return task178g;
+        return task178d;
     }
 
     private Task178d(){
@@ -35,13 +35,13 @@ public class Task178d implements Task<Integer, int[]> {
 
     @Override
     public void setUp(int[] value) throws IOException {
-        array = new int[value.length];
-        System.arraycopy(value,0,array,0,value.length);
+        array = value;
+        arraySize = value.length;
     }
 
     public Integer execute() {
         for(int i = 0; i < arraySize; i++){
-            if(array[i] > Math.pow(2, i + 1) && array[i] < factorial(i + 1)){
+            if(array[i] > Math.pow(2, i + 1) && array[i] < factorial(i + 1)) {
                 count++;
             }
         }
