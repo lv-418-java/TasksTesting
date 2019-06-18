@@ -4,14 +4,12 @@ import com.softserve.ita.taskstesting.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.List;
-import java.util.Random;
 
-public class Task178v implements Task<Integer, Integer> {
+public class Task178v implements Task<Integer, int[]> {
 
     private final static Task178v task178v = new Task178v();
 
-    public synchronized static Task<Integer, Integer> getInstance(){
+    public synchronized static Task<Integer, int[]> getInstance(){
         return task178v;
     }
 
@@ -20,31 +18,33 @@ public class Task178v implements Task<Integer, Integer> {
     }
 
     private int arraySize = 0;
+    private int[] array;
     private int sqrtOfEvenNumb = 0;
 
     public void setUp(BufferedReader bufferedReader) throws IOException {
         System.out.print("Number of elements in the array: ");
 
         arraySize = Integer.valueOf(bufferedReader.readLine());
+        array = new int[arraySize];
+        System.out.println("Elements:");
+        for(int i = 0; i < arraySize; i++) {
+            array[i] = Integer.valueOf(bufferedReader.readLine());
+        }
     }
 
     @Override
-    public void setUp(Integer value) throws IOException {
-        arraySize = value;
+    public void setUp(int[] value) throws IOException {
+        array = value;
+        arraySize = value.length;
     }
 
     public Integer execute() {
-        int[] naturalArr = new int[arraySize];
+        sqrtOfEvenNumb = 0;
+        for (int i = 0; i < arraySize; i++) {
+            if (Math.sqrt(array[i]) % 2 == 0) {
+                sqrtOfEvenNumb++;
+            }
 
-        Random random = new Random();
-
-        for (int i = 0; i < naturalArr.length; i++) {
-            naturalArr[i] = random.nextInt(100) + 1;
-        }
-
-
-        for (int i = 0; i < naturalArr.length; i++) {
-            if (Math.sqrt(naturalArr[i]) % 2 == 0) sqrtOfEvenNumb++;
         }
         return sqrtOfEvenNumb;
     }
