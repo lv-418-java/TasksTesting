@@ -31,11 +31,14 @@ public class Main {
         tasks.put("322",  Task322.getInstance());
         tasks.put("331a",  Task331a.getInstance());
         tasks.put("323",  Task323.getInstance());
+        tasks.put("108",  Task108.getInstance());
         tasks.put("330",  Task330.getInstance());
         tasks.put("554",  Task554.getInstance());
         tasks.put("332",  Task332.getInstance());
         tasks.put("555",  Task555.getInstance());
         tasks.put("559",  Task559.getInstance());
+        tasks.put("331a",  Task331a.getInstance());
+        tasks.put("331b",  Task331b.getInstance());
     }
 
 

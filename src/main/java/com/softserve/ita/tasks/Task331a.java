@@ -37,6 +37,7 @@ public class Task331a implements Task<List<String>, Integer> {
 
     @Override
     public List<String> execute() {
+        list.clear();
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < n; j++) {
                 for (int k = 1; k < n; k++) {
