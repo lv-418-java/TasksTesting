@@ -32,4 +32,13 @@ public class TripleTuple<E, T, R> extends DoubleTuple<E, T> {
                 && tripleTuple.secondElement == secondElement
                 && tripleTuple.thirdElement == thirdElement;
     }
+
+    @Override
+    public String toString() {
+        return "TripleTuple(" +
+                "firstElement = " + firstElement +
+                ", secondElement =" + secondElement +
+                ", thirdElement =" + thirdElement +
+                ")";
+    }
 }
