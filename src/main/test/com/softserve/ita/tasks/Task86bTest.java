@@ -16,6 +16,6 @@ public class Task86bTest {
     }
     @Test
     public void testExecute() {
-        Assert.assertTrue(t.execute() == 5);
+        Assert.assertEquals((int) t.execute(), 5);
     }
 }

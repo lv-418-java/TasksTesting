@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task332 implements Task<List <Solution>, Integer> {
+public class Task332 implements Task<List<Solution>, Integer> {
     private int number;
 
     private final static Task332 task332 = new Task332();
@@ -35,22 +35,22 @@ public class Task332 implements Task<List <Solution>, Integer> {
     }
 
     private List<Solution> findSolution(int number) {
-        List<Solution> solutionList = new ArrayList<>();
-        for (int x = 0; x < number; x++) {
-            for (int y = 0; y < number; y++) {
-                for (int z = 0; z < number; z++) {
-                    for (int t = 0; t < number; t++) {
+        List<Solution> solutions = new ArrayList<>();
+        for (int x = 1; x < number; x++) {
+            for (int y = 1; y < number; y++) {
+                for (int z = 1; z < number; z++) {
+                    for (int t = 1; t < number; t++) {
                         if ((x * x + y * y + z * z + t * t) == number) {
-                            solutionList.add(new Solution(x, y, z, t));
+                            solutions.add(new Solution(x, y, z, t));
                         }
                     }
                 }
             }
         }
-        return solutionList;
+        return solutions;
     }
 
-    public class Solution {
+    public static class Solution {
         private int x;
         private int y;
         private int z;
@@ -61,6 +61,17 @@ public class Task332 implements Task<List <Solution>, Integer> {
             this.y = y;
             this.z = z;
             this.t = t;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+
+            if (obj == null || obj.getClass() != getClass()) return false;
+
+            Solution s = (Solution) obj;
+
+            return x == s.x && y == s.y && z == s.z && t == s.t;
         }
 
         @Override
