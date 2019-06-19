@@ -27,6 +27,7 @@ public class Main {
         tasks.put("226", Task226.getInstance());
         tasks.put("243a", Task243a.getInstance());
         tasks.put("322",  Task322.getInstance());
+        tasks.put("331a",  Task331a.getInstance());
         tasks.put("323",  Task323.getInstance());
         tasks.put("330",  Task330.getInstance());
         tasks.put("554",  Task554.getInstance());
