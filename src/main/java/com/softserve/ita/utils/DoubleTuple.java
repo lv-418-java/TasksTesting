@@ -39,4 +39,12 @@ public class DoubleTuple<E, T> {
 
         return doubleTuple.firstElement == firstElement && doubleTuple.secondElement == secondElement;
     }
+
+    @Override
+    public String toString() {
+        return "DoubleTuple(" +
+                "firstElement = " + firstElement +
+                ", secondElement =" + secondElement +
+                ")";
+    }
 }
