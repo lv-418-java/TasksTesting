@@ -11,13 +11,19 @@ import java.util.Map;
 
 public class Task559 implements Task<List<Long>, Long> {
 
+    /*
+     * Дано натуральне n. Знайти усі менші n числа Мерсена. (2^p - 1, p - просте число)
+     * */
+
     private final static Task559 task559 = new Task559();
 
     public synchronized static Task<List<Long>, Long> getInstance() {
         return task559;
     }
 
-    private static Map<Long, Byte> primeNumbers = new HashMap<>();
+    private static Map<Long, Byte> primeNumbers = new HashMap<Long, Byte>() {{
+        put(2L, (byte) 1);
+    }};
 
     private long n;
 
@@ -40,7 +46,6 @@ public class Task559 implements Task<List<Long>, Long> {
 
     @Override
     public List<Long> execute() {
-        // (!) n < m (!)
         List<Long> mersenneNumbers = new ArrayList<>();
 
         long number = 3;
@@ -49,7 +54,6 @@ public class Task559 implements Task<List<Long>, Long> {
         while (number <= n) {
             if (isPrime(power)) {
                 mersenneNumbers.add(number);
-
                 number = (2 << (power - 1)) - 1;
             }
             power++;

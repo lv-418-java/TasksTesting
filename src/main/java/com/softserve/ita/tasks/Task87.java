@@ -8,6 +8,10 @@ import java.io.IOException;
 
 public class Task87 implements Task<Long, DoubleTuple<Long, Long>> {
 
+    /*
+    * Дано натуральні n, m. Отримати суму останніх m цифр числа n
+    * */
+
     private final static Task87 task87 = new Task87();
 
     public synchronized static Task<Long, DoubleTuple<Long, Long>> getInstance() {

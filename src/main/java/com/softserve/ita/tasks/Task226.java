@@ -10,6 +10,10 @@ import java.util.List;
 
 public class Task226 implements Task<List<Long>, DoubleTuple<Long, Long>> {
 
+    /*
+     * Дано натуральні n, m. Отримати усі їх натуральні спільні кратні які не пеевищують n*m
+     * */
+
     private final static Task226 task226 = new Task226();
 
     public synchronized static Task<List<Long>, DoubleTuple<Long, Long>> getInstance() {

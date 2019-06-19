@@ -1,34 +1,15 @@
 package com.softserve.ita.utils;
 
-public class TripleTuple<E, T, R> {
+public class TripleTuple<E, T, R> extends DoubleTuple<E, T> {
 
-    private E firstElement;
-    private T secondElement;
     private R thirdElement;
 
     public TripleTuple() {
     }
 
     public TripleTuple(E firstElement, T secondElement, R thirdElement) {
-        this.firstElement = firstElement;
-        this.secondElement = secondElement;
+        super(firstElement, secondElement);
         this.thirdElement = thirdElement;
-    }
-
-    public E getFirstElement() {
-        return firstElement;
-    }
-
-    public void setFirstElement(E firstElement) {
-        this.firstElement = firstElement;
-    }
-
-    public T getSecondElement() {
-        return secondElement;
-    }
-
-    public void setSecondElement(T secondElement) {
-        this.secondElement = secondElement;
     }
 
     public R getThirdElement() {

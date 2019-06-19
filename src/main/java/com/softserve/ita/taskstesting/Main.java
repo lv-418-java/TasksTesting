@@ -1,6 +1,7 @@
 package com.softserve.ita.taskstesting;
 
 import com.softserve.ita.tasks.*;
+import com.softserve.ita.utils.TripleTuple;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -58,7 +59,9 @@ public class Main {
             if (task == null) {
                 System.out.println("Task '" + taskName + "' not found.");
             } else {
-                task.setUp(bufferedReader);
+
+
+               task.setUp(bufferedReader);
                 Object result = task.execute();
                 System.out.println("Result: " + result);
             }
