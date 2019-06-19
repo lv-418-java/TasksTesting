@@ -47,7 +47,7 @@ public class Task88a implements Task<String, Integer> {
 			}
 		}
 		if (zero == 0) {
-			return "Square of number doesn't containts 3";
+			return "Square of number doesn't contain 3";
 		}
 		return "Square of number contains 3";
 	}

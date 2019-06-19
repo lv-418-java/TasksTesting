@@ -11,11 +11,11 @@ import java.util.Random;
 public class Task178b implements Task<List, Integer> {
     private final static Task178b task178b = new Task178b();
 
-    public synchronized static Task<List, Integer> getInstance(){
+    public synchronized static Task<List, Integer> getInstance() {
         return task178b;
     }
 
-    private Task178b(){
+    private Task178b() {
 
     }
 
@@ -36,11 +36,12 @@ public class Task178b implements Task<List, Integer> {
 
     public List execute() {
         int[] naturalArr = new int[arraySize];
-
+        multOf3 = 0;
+        notMultOf5 = 0;
 //        Random random = new Random();
 
         for (int i = 0; i < arraySize; i++) {
-            naturalArr[i] = i+1;     //random.nextInt(100) + 1;
+            naturalArr[i] = i + 1;     //random.nextInt(100) + 1;
             System.out.print(naturalArr[i] + " ");
         }
         System.out.println("\n");
