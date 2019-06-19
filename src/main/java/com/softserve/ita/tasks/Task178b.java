@@ -37,15 +37,22 @@ public class Task178b implements Task<List, Integer> {
     public List execute() {
         int[] naturalArr = new int[arraySize];
 
-        Random random = new Random();
+//        Random random = new Random();
 
-        for (int i = 0; i < naturalArr.length; i++) {
-            naturalArr[i] = random.nextInt(100) + 1;
+        for (int i = 0; i < arraySize; i++) {
+            naturalArr[i] = i+1;     //random.nextInt(100) + 1;
+            System.out.print(naturalArr[i] + " ");
         }
+        System.out.println("\n");
 
         for (int i1 : naturalArr) {
-            if ((i1 % 3) == 0) multOf3++;
-            if ((i1 % 5) != 0) notMultOf5++;
+            if ((i1 % 3) == 0) {
+                System.out.println(i1 + " " + (multOf3 + 1));
+                multOf3++;
+            }
+            if ((i1 % 5) != 0) {
+                notMultOf5++;
+            }
         }
 
         List<Integer> arrResult = new ArrayList<>();
