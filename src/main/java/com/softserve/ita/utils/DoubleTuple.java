@@ -2,8 +2,8 @@ package com.softserve.ita.utils;
 
 public class DoubleTuple<E, T> {
 
-    private E firstElement;
-    private T secondElement;
+    protected E firstElement;
+    protected T secondElement;
 
     public DoubleTuple() {
     }
@@ -27,5 +27,16 @@ public class DoubleTuple<E, T> {
 
     public void setSecondElement(T secondElement) {
         this.secondElement = secondElement;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        DoubleTuple<?, ?> doubleTuple = (DoubleTuple<?, ?>) obj;
+
+        return doubleTuple.firstElement == firstElement && doubleTuple.secondElement == secondElement;
     }
 }

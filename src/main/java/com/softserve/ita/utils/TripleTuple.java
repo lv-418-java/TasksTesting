@@ -2,7 +2,7 @@ package com.softserve.ita.utils;
 
 public class TripleTuple<E, T, R> extends DoubleTuple<E, T> {
 
-    private R thirdElement;
+    protected R thirdElement;
 
     public TripleTuple() {
     }
@@ -18,5 +18,18 @@ public class TripleTuple<E, T, R> extends DoubleTuple<E, T> {
 
     public void setThirdElement(R thirdElement) {
         this.thirdElement = thirdElement;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        TripleTuple<?, ?, ?> tripleTuple = (TripleTuple<?, ?, ?>) obj;
+
+        return tripleTuple.firstElement == firstElement
+                && tripleTuple.secondElement == secondElement
+                && tripleTuple.thirdElement == thirdElement;
     }
 }
