@@ -46,7 +46,8 @@ public class Task243b implements Task<List<String> , Integer> {
             }
         }
 
-        return resultList.get(0) != null ? resultList : Collections.emptyList();
+        return resultList.get(0) != null ?
+                resultList : Collections.emptyList();
     }
 }
 

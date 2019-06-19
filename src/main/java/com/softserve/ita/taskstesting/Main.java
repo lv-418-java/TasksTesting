@@ -15,7 +15,7 @@ public class Main {
         tasks.put("86b",  Task86b.getInstance());
         tasks.put("88b",  Task88b.getInstance());
         tasks.put("86a",  Task86a.getInstance());
-        tasks.put("87",  Task87.getInstance());
+        tasks.put("87",   Task87.getInstance());
         tasks.put("88a",  Task88a.getInstance());
         tasks.put("88v",  Task88v.getInstance());
         tasks.put("88g",  Task88g.getInstance());
@@ -26,6 +26,7 @@ public class Main {
         tasks.put("178d", Task178d.getInstance());
         tasks.put("226", Task226.getInstance());
         tasks.put("243a", Task243a.getInstance());
+        tasks.put("243b", Task243b.getInstance());
         tasks.put("322",  Task322.getInstance());
         tasks.put("331a",  Task331a.getInstance());
         tasks.put("323",  Task323.getInstance());
@@ -42,9 +43,9 @@ public class Main {
 
         while (true) {
             System.out.println("\nEnter task name:");
-            String taskName = bufferedReader.readLine()
-                    .trim()
-                    .replace("[ ]{2,}"," ")
+            String taskName = bufferedReader.readLine();
+            taskName = taskName.trim()
+                    .replaceAll("[ ]{2,}","")
                     .toLowerCase();
 
 
