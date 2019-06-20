@@ -39,6 +39,7 @@ public class Main {
         tasks.put("559",  Task559.getInstance());
         tasks.put("331a",  Task331a.getInstance());
         tasks.put("331b",  Task331b.getInstance());
+        tasks.put("560",  Task560.getInstance());
     }
 
 
